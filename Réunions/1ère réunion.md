@@ -11,7 +11,7 @@
   - opposition policy/politics
   - citer sans citer "un proche dit ..."
   
-# La politique commentaire sportif:
+## La politique commentaire sportif:
   - se concentre sur les stratégie politiciennes
   - analyse les prises de position et rapport de force
   -"un joli coup" "un bon coup "

@@ -64,8 +64,9 @@ def clean_doccano(df):
                 txt = ""
                 txt += text[:index[0]]
                 for j in range(len(index)-1):
-                    txt += "@"
+                    txt += " @ "
                     txt +=  text[index[j]:index[j+1]]
+                txt += " @ "
                 txt += text[index[-1]:]
 
                 token = tokenizer(txt)['input_ids']

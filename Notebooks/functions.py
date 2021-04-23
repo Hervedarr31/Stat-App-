@@ -137,7 +137,7 @@ def split_df(df, cut = 5):
 def get_train_val(df, cut = 5, train = 0.9):
     
     data = clean_doccano(df)
-    data = split_df(df, cut)
+    data = split_df(data, cut)
     input_ids = torch.stack(list(data['token'].values), 0)
     labels = torch.stack(list(data['Annotateur 1'].values), 0)
     attention_masks = torch.stack(list(data['attention mask'].values), 0)

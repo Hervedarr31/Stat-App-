@@ -147,7 +147,7 @@ def get_train_val(df, cut = 5, train = 0.9):
     
     train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
     
-    return(train_dataset, val_daataset)
+    return(train_dataset, val_dataset)
 
 
 

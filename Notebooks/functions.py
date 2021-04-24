@@ -84,10 +84,7 @@ def clean_doccano(df):
     data = delete_not_read(data)
     
     bdd = data.drop(['text', 'index'], axis = 1)
-    i=1
-    for user in list(bdd.columns)[1:]:
-        bdd.rename( columns = {user : f'Annotateur {i}'}, inplace = True)
-        i+=1
+   
     return(bdd.reset_index(drop=True))
 
 
@@ -135,12 +132,12 @@ def split_df(df, cut = 5):
         
     return(bd)
 
-def get_train_val(df, cut = 5, train = 0.9):
+def get_train_val(df, user, cut = 5, train = 0.9):
     
     data = clean_doccano(df)
     data = split_df(data, cut)
     input_ids = torch.stack(list(data['token'].values), 0)
-    labels = torch.stack(list(data['Annotateur 1'].values), 0)
+    labels = torch.stack(list(data[f'{user}'].values), 0)
     attention_masks = torch.stack(list(data['attention mask'].values), 0)
     dataset = TensorDataset(input_ids, attention_masks, labels)
     train_size = int(train * len(dataset))
